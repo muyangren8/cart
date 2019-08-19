@@ -1,0 +1,25 @@
+{
+    "/sysa": {
+        "target": "http://127.0.0.1:8081",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/sysa": ""
+        }
+    },
+
+    
+        
+    "/sso": {
+        "target": "http://127.0.0.1:8080/sso",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/sso": ""
+        }
+    }
+    
+
+}

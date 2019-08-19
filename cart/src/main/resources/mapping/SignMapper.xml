@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qhj.cart.mapper.SignMapper">
+
+    <insert id="addSign" parameterType="com.qhj.cart.domain.Sign">
+        insert into sign
+        (id, mid, mname, gid, gname, cid, cname, planStartDate, planEndDate, signatureImageA, signatureImageB, signDateA, signDateB)
+        values
+        (#{id}, #{mid}, #{mname}, #{gid}, #{gname}, #{cid}, #{cname}, #{planStartDate}, #{planEndDate}, #{signatureImageA},
+                #{signatureImageB}, #{signDateA}, #{signDateB})
+    </insert>
+
+    <select id="getSignById" parameterType="long" resultType="com.qhj.cart.domain.Sign">
+        select * from sign where id = #{id}
+    </select>
+</mapper>

@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>智慧经分</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="echartPie" #echartPie></div>
+  <div class="btn">
+    <ion-button (click)="initCharts()" fill="clear" color="dark" class="mapBtn">
+      <ion-icon name="refresh-circle"></ion-icon>
+    </ion-button>
+    <ion-button (click)="showModal()" fill="clear" color="dark" class="dataBtn">
+      <ion-icon name="list-box"></ion-icon>
+    </ion-button>
+  </div>
+</ion-content>
