@@ -26,7 +26,8 @@ public class RedisUtil {
      *
      * @param key   键
      * @param value 值
-     */ public static void set(String key, String value) {
+     */
+    public static void set(String key, String value) {
         set(key, value, DEFAULT_EXPIRE_TIME);
     }
 

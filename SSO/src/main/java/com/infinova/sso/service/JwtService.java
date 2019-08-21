@@ -21,7 +21,10 @@ import java.util.UUID;
 public class JwtService {
 
     private ManagerMapper managerMapper;
-    public static final String JWT_KEY = "jwt_token";
+    @Autowired
+    public JwtService(ManagerMapper managerMapper) {
+        this.managerMapper = managerMapper;
+    }
 
     private Logger logger = LoggerFactory.getLogger(JwtService.class);
 
@@ -29,17 +32,10 @@ public class JwtService {
      * jwt token超时时间，单位ms
      */
     private static int expireTime;
-
-    @Autowired
-    public JwtService(ManagerMapper managerMapper) {
-        this.managerMapper = managerMapper;
-    }
-
     @Value("${jwt_expire_time}")
-    public void setExpireTime(int expireTime) {
-        JwtService.expireTime = expireTime * 60 * 1000;
+    public void setExpireTime(int jwt_expire_time) {
+        JwtService.expireTime = jwt_expire_time * 60 * 1000;
     }
-
 
     public String login(Manager manager) {
         //进行登录校验
