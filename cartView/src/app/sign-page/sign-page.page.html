@@ -5,145 +5,362 @@
         <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>集团5G通信服务战略协议</ion-title>
+    <ion-title >5G业务测试活动协议（定向邀请）</ion-title>
     <ion-buttons slot="end">
-        <ion-button (click)="doSign()">
-          提交
-        </ion-button>
-      </ion-buttons>
+      <ion-button (click)="doSign()">
+        提交
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
   <div>
     <div>
       <p style="margin:0px 0px 5px; orphans:0; text-align:justify; widows:0">
-        <span style="font-family:仿宋; font-size:14px; font-weight:bold">甲方：</span>
-        <span
-          style="background-color:#d8d8d8; font-family:仿宋; font-size:14px; font-weight:bold; text-decoration:underline">
-          {{gname}}
-        </span>
-      </p>
-      <p style="margin:0px 0px 5px; orphans:0; text-align:justify; widows:0">
-        <span style="font-family:仿宋; font-size:14px; font-weight:bold">乙方：</span>
-        <span style="font-family:仿宋; font-size:14px">中国移动通信集团浙江有限公司宁波分公司</span>
-      </p>
-      <p
-        style="font-size:14px; line-height:150%; margin:0px; orphans:0; text-align:justify; text-indent:10px; widows:0">
+        <span style="font-family:仿宋; font-size:14px; font-weight:bold">甲方名称：</span>
         <span
           style="background-color:#d8d8d8; font-family:仿宋; font-size:14px; font-weight:bold; text-decoration:underline">
           {{cname}}
         </span>
+      </p>
+      <p style="margin:0px 0px 5px; orphans:0; text-align:justify; widows:0">
+        <span style="font-family:仿宋; font-size:14px; font-weight:bold">乙方名称：</span>
+        <span style="font-family:仿宋; font-size:14px">中国移动通信集团浙江有限公司宁波分公司</span>
+      </p>
+      <br>
+      <p
+        style="font-size:14px; line-height:150%; margin:0px; orphans:0; text-align:justify; text-indent:20px;  widows:0">
         <span style="font-family:仿宋; font-size:14px">
-          （以下简称甲方）和中国移动通信集团浙江有限公司宁波分公司（以下简称乙方）本着资源共享、优势互补、
-          互利共赢的原则，为促进双方业务的协同发展，经友好协商，现就集团5G通信服务事宜约定如下。
+          根据《中华人民共和国合同法》、《中华人民共和国电信条例》以及相关法律、法规，甲、乙双方在平等、自愿、公平、诚实、信用的基础上，
+          就甲方参与由乙方组织和实施的5G业务测试活动（“测试活动”），达成协议如下：
         </span>
       </p>
-      <p
-        style="font-size:14px; line-height:150%; margin:0px; orphans:0; text-align:justify; text-indent:20px; widows:0">
-        <span style="font-family:仿宋; font-size:14px;font-weight:bold">一、合同时限</span>
+      <br>
+      <p style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-42pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px;font-weight:bold">一、测试期间</span>
       </p>
       <p
-        style="font-size:14px; line-height:150%; margin:0px; orphans:0; text-align:justify; text-indent:10px; widows:0">
+        style="font-size:14px; line-height:150%; margin:0px; orphans:0; text-align:justify; text-indent:20px;  widows:0">
         <span style="font-family:仿宋; font-size:14px;float: left;">
-          <ion-datetime style="padding: 0px;font-family:仿宋;" class="datetime" displayFormat="YYYY年MM月DD日" pickerFormat="YYYY-MM-DD"
-            placeholder="点击选择合同起始日期" [(ngModel)]="sign.planStartDate"></ion-datetime>
+          <ion-datetime style="padding: 0px;font-family:仿宋;" class="datetime" displayFormat="YYYY年MM月DD日"
+            pickerFormat="YYYY-MM-DD" placeholder="点击选择起始日期" [(ngModel)]="sign.planStartDate"></ion-datetime>
         </span>
-        <span style="font-family:仿宋; font-size:14px;float:left">至</span>
+        <span style="font-family:仿宋; font-size:14px;float:left">起至</span>
         <span style="font-family:仿宋; font-size:14px;float:left">
-          <ion-datetime style="padding: 0px;font-family:仿宋;" class="datetime" displayFormat="YYYY年MM月DD日" pickerFormat="YYYY-MM-DD"
-            placeholder="点击选择合同截至日期" [(ngModel)]="sign.planEndDate"></ion-datetime>
+          <ion-datetime style="padding: 0px;font-family:仿宋;" class="datetime" displayFormat="YYYY年MM月DD日"
+            pickerFormat="YYYY-MM-DD" placeholder="点击选择截至日期" [(ngModel)]="sign.planEndDate"></ion-datetime>
         </span>
         <br>
         <!-- <span style="font-family:仿宋; font-size:14px;float:right"> </span> -->
       </p>
-      <p
-        style="font-size:14px; line-height:150%; margin:0px; orphans:0; text-align:justify; text-indent:20px; widows:0">
-        <span style="font-family:仿宋; font-size:14px; font-weight:bold">二、合作内容</span>
+      <br>
+      <p style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-42pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px; font-weight:bold">二、测试内容</span>
       </p>
       <p
-        style="font-size:14px; line-height:150%; margin:0px; orphans:0; text-align:justify; text-indent:20px; widows:0">
-        <span style="font-family:仿宋; font-size:14px">乙方为甲方订制3套5G通信服务的优惠方案，甲方根据自身实际需求选择优惠方案中
-          的1种或几种视为甲方与乙方进行5G通信服务战略合作，5G服务优惠方案如下（以下选择画√）
+        style="font-size:14px; line-height:130%; margin:0px; orphans:0; text-align:justify; widows:0; text-indent:20px; ">
+        <span style="font-family:仿宋; font-size:14px">
+          甲方在乙方5G业务测试活动开展的5G网络覆盖范围内，自愿参与乙方组织的5G业务测试活动。甲方对于以下内容明确知晓且接受：
         </span>
       </p>
-      <p style="font-size:14px; line-height:130%; margin:0px; orphans:0; text-align:justify; widows:0">
+      <p
+        style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px">
+          2.1. 乙方提供的5G网络的覆盖范围及漫游到其它网络的范围，将随5G业务测试活动的开展而随时调整。
+        </span>
+      </p>
+      <p
+        style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px">
+          2.2. 为保证甲方顺利参与测试活动，乙方负责在协议有效期内为甲方提供测试用终端及测试所用的带中国移动手机号码的USIM卡，
+          具体号码和终端的型号由乙方指定，且在测试期间该号码不可进行号码携带转网。
+        </span>
+      </p>
+      <p
+        style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px">
+          2.3. 乙方在测试期间将在5G网络所能支持的技术范围内保障相关网络的服务质量、业务质量及终端质量。</span>
+        <span style="font-family:仿宋; font-size:14px;font-weight: bold">
+          但因应用测试期的网络服务存在相当的不确定性，不等同于正式商用的服务质量、业务质量及终端质量。
+        </span>
+      </p>
+      <p
+        style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px">
+          2.4. 甲方应当在测试期间充分履行4.1款所约定的主要配合测试义务。
+        </span>
+      </p>
+      <br>
+      <p style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px; font-weight:bold">三、资费标准</span>
+      </p>
+      <p
+        style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px">
+          3.1. 甲方在测试期间选择乙方提供优惠套餐
+        </span>
+      </p>
+      <p style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:1pt; widows:0;">
         <ion-radio-group name="plan" [(ngModel)]="sign.plan">
-          <span style="font-family:仿宋; font-size:14px">A、“飞悦98移宽福”</span>
-          <span style=" font-family:仿宋; font-size:14px">
-            （<ion-radio value="Aplan" color="dark"></ion-radio>）户
-          </span>
-          <br>
-          <span style="font-family:仿宋; font-size:14px">B、“飞悦98移宽福”</span>
-          <span style=" font-family:仿宋; font-size:14px">
-            （<ion-radio value="Bplan" color="dark"></ion-radio>）户
-          </span>
-          <br>
-          <span style="font-family:仿宋; font-size:14px">C、“飞悦98移宽福”</span>
-          <span style=" font-family:仿宋; font-size:14px">
-            （<ion-radio value="Cplan" color="dark"></ion-radio>）户
-          </span>
+          <span style="font-family:仿宋; font-size:14px;display:block;; text-indent:30px">A、“飞悦98移宽福”（<ion-radio
+              value="Aplan" color="dark"></ion-radio>）户</span>
+          <span style="font-family:仿宋; font-size:14px;display:block;; text-indent:30px">B、“飞悦98移宽福”（<ion-radio
+              value="Bplan" color="dark"></ion-radio>）户</span>
+          <span style="font-family:仿宋; font-size:14px;display:block;; text-indent:30px">C、“飞悦98移宽福”（<ion-radio
+              value="Cplan" color="dark"></ion-radio>）户</span>
         </ion-radio-group>
       </p>
       <p
-        style="font-size:14px; line-height:130%; margin:0px; orphans:0; text-align:justify; text-indent:21px; widows:0">
-        <span style="font-family:仿宋; font-size:14px; font-weight:bold">三、双方权利</span>
-      </p>
-      <p
-        style="font-size:14px; line-height:130%; margin:0px; orphans:0; text-align:justify; widows:0; text-indent:10px">
-        <span style="font-family:仿宋; font-size:14px">1、甲方权利：</span>
-        <span style="font-family:仿宋; font-size:14px">甲方为乙方在其企业驻地及经营场所内从事通信业务便利提供便利，并积极引导本集团员工办理乙方相关通信业务。</span>
-      </p>
-      <p
-        style="font-size:14px; line-height:130%; margin:0px; orphans:0; text-align:justify; widows:0; text-indent:10px">
-        <span style="font-family:仿宋; font-size:14px">2、乙方权利：</span>
-        <span style="font-family:仿宋; font-size:14px">乙方设立业务咨询和联系电话，为甲方携号转入用户提供答疑服务。</span>
-      </p>
-      <p
-        style="font-size:14px; line-height:130%; margin:0px; orphans:0; text-align:justify; text-indent:21px; widows:0">
-        <span style="font-family:仿宋; font-size:14px; font-weight:bold">四、双方义务</span>
-      </p>
-      <p
-        style="font-size:14px; line-height:130%; margin:0px; orphans:0; text-align:justify; widows:0; text-indent:10px">
+        style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:0pt; widows:0;">
         <span style="font-family:仿宋; font-size:14px">
-          1、甲方义务：甲方需按照双方约定户数，引导本集团对应户数员工在2019年
-          12月底与中国移动建立5G通信服务关系（含2/3/4/5G通信服务）；根据乙方计费要求，按时缴纳通信费用。
+          若甲方产生套餐外的其他消费，乙方有权按现行的资费标准额外收取相关费用。
+        </span>
+        <span style="font-family:仿宋; font-size:14px;font-weight: bold">
+          甲方应按时向乙方交纳套餐外的相关费用，甲方超过约定交费日未交足费用，乙方有权暂停提供本合同约定的各项服务。
+        </span>
+        <span style="font-family:仿宋; font-size:14px">
+          涉及优惠套餐内容参见附件《5G通信服务优惠方案》
         </span>
       </p>
       <p
-        style="font-size:14px; line-height:130%; margin:0px; orphans:0; text-align:justify; widows:0; text-indent:10px">
+        style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
         <span style="font-family:仿宋; font-size:14px">
-          2、乙方义务：为乙方提供5G基础通信服务；双方合作期间内乙方为甲方提供5G通信服务最新优惠政策。
+          3.2. 测试期间的计费周期为自然月，即每月第一日至当月最后一日（由于网络设备产生话单及相关处理会有时延，
+          可能发生每月部分话费计入下月话费中收取的情况，甲方对此表示明确知晓且接受）。
         </span>
-      </p>
-      <p style="font-size:14px; line-height:130%; margin:0px; orphans:0; text-align:justify;text-indent:21px;widows:0">
-        <span style="font-family:仿宋; font-size:14px; font-weight:bold">五、其他事项</span>
       </p>
       <p
-        style="font-size:14px; line-height:130%; margin:0px; orphans:0; text-align:justify; widows:0; text-indent:10px">
-        <span style="font-family:仿宋; font-size:14px">1、若甲方未在规定时限内完成约定用户数量5G通信服务签约，乙方有权不为甲方提供约定的相关优惠。</span>
+        style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px">
+          3.3. 为鼓励甲方有效参与测试活动，乙方在本协议生效之日为测试集团提供特惠套餐，套餐优惠期与本协议中规定的测试期间保持一致。
+        </span>
+        <span style="font-family:仿宋; font-size:14px;font-weight: bold">
+          套餐内包含的流量、语音、短信等仅限当月使用，不能转结至次月，不能退费折现。
+        </span>
+      </p>
+      <br>
+      <p style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-42pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px; font-weight:bold">四、甲方权利及义务</span>
       </p>
       <p
-        style="font-size:14px; line-height:130%; margin:0px; orphans:0; text-align:justify; widows:0; text-indent:10px">
+        style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px">4.1. 甲方申请参与5G业务测试的流程：</span>
+        <span style="font-family:仿宋; font-size:14px;display:block;; text-indent:1pt">（一）应当首先满足下列条件</span>
+        <span style="font-family:仿宋; font-size:14px;display:block;; text-indent:1pt">1）是中国移动通信网络个人客户；</span>
+        <span
+          style="font-family:仿宋; font-size:14px;display:block;; text-indent:1pt">2）连续在网时长、月平均消费话费、月流量使用量等方面满足乙方要求的条件。</span>
+        <span
+          style="font-family:仿宋; font-size:14px;display:block;; text-indent:1pt">（二）在签订合同前，甲方需提交测试申请，以证明前述条件，提交的测试申请材料包括：</span>
+        <span
+          style="font-family:仿宋; font-size:14px;display:block;; text-indent:1pt">1）《电话用户真实身份信息登记规定》（工业和信息化部令第25号）规定的有效证件；</span>
+        <span style="font-family:仿宋; font-size:14px;display:block;; text-indent:1pt">2）甲方集团使用的中国移动号码。</span>
+      </p>
+      <p
+        style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
         <span style="font-family:仿宋; font-size:14px">
-          2、双方对本协议涉及的商业机密、价格协定等合作内容应严格保密，一方根据本协议收到的对方提供的
-          资料文件或直接/间接直销的客户信息，未经对方/客户事先书面许可，不得对外公布、泄露、交换、出售或允许他人使用，更不能利用相关保密信息进行任何商业活动。
+          4.2. 甲方在测试期间的主要配合测试义务如下：甲方应保证在测试期间其本合同首页中的甲方测试所用手机号码状态正常，即不欠费、不停机。
         </span>
       </p>
-      <p style="font-size:14px; line-height:150%; margin:0px; orphans:0; widows:0; text-indent:10px">
+      <p
+        style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
         <span style="font-family:仿宋; font-size:14px">
-          3、本协议履行中产生争议，双方应本着友好态度协商解决，若协商不成，可向宁波仲裁委员会提起仲裁。
+          4.3. 甲方在测试期间不得重复参与乙方组织的与本协议相同或类似的业务测试活动。
         </span>
       </p>
-      <p style="font-size:14px; line-height:150%; margin:0px; orphans:0; widows:0; text-indent:10px">
+      <p
+        style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
         <span style="font-family:仿宋; font-size:14px">
-          4、本合同为电子合同，经系统校验（手机验证码形式）签约人为甲方集团法人或为委托经办人后，经甲方签字后生效。
+          4.4. 甲方不得利用乙方提供的服务从事违法犯罪活动或违背公序良俗的活动，不得发送违法信息或未经接收客户同意发送骚扰信息，
+          不得有拨打骚扰电话等不当行为，否则，乙方可以暂停向甲方提供服务，直至终止服务。
         </span>
       </p>
-      <p style="font-size:14px; line-height:150%; margin:0px; orphans:0; widows:0">
-        <span style="font-family:仿宋; font-size:14px">附件一：5G通信服务优惠方案</span>
+      <br>
+      <p style="font-size:14px; line-height:130%; margin:0px; orphans:0; text-align:justify;  widows:0">
+        <span style="font-family:仿宋; font-size:14px; font-weight:bold">五、乙方权利及义务</span>
       </p>
-      <p style="font-size:14px; line-height:130%; margin:0px; orphans:0; text-align:justify; widows:0">
+      <p
+        style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px">
+          5.1. 乙方根据5G测试期间的技术及设备条件，在网络技术系统允许的范围内为甲方提供通信服务，测试期间5G信号可能不连续覆盖，
+          可能无法达到正式商用的通信质量标准和覆盖范围，乙方的通信质量可能会受影响，甲方对此已明确知晓并同意。
+        </span>
+      </p>
+      <p
+        style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px">
+          5.2. 乙方通过营业厅、网站或短信等方式向甲方通知服务项目、服务时限、服务范围、资费标准、资费调整及补贴金额调整等内容，
+          乙方发布的上述通知视为本合同的有效组成部分。
+        </span>
+      </p>
+      <p
+        style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px">
+          5.3. 乙方向甲方提供业务办理、业务咨询和投诉、话费信息查询的渠道，包括但不限于营业厅、服务热线、网站公告、短信等。
+        </span>
+      </p>
+      <p
+        style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px">
+          5.4. 乙方有义务采取公布客服电话等形式受理甲方投诉，客服电话为10086。
+        </span>
+      </p>
+      <p
+        style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px">
+          5.5. 乙方对测试产生的话费数据及信息服务计费数据保留期限为6个月(系统产生客户话单当月起后6个月，不含当月)，
+          对甲方在数据保留期限内提出异议的话单，应保存至异议解决为止。
+        </span>
+      </p>
+      <p
+        style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px">
+          5.6. 若甲方对乙方收取的话费有异议，乙方将进行调查、解释，并告知甲方核实处理的结果。
+        </span>
+      </p>
+      <p
+        style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px">
+          5.7. 乙方不得侵害甲方的通信自由和通信秘密，对甲方的客户资料负有保密义务。但根据法律法规规定，
+          乙方应配合公安机关、人民检察院、国家安全机关及其它法定有权机关进行侦查、调查工作的情况除外。
+        </span>
+      </p>
+      <br>
+      <p style="font-size:14px; line-height:130%; margin:0px; orphans:0; text-align:justify;  widows:0">
+        <span style="font-family:仿宋; font-size:14px; font-weight:bold">六、特定责任承担</span>
+      </p>
+      <p
+        style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px">
+          6.1. 对于在此次5G业务测试活动中发生的异议，双方应通过友好协商解决，甲方无权向与此次测试活动无关的第三方披露任何信息。
+        </span>
+      </p>
+      <p
+        style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px">
+          6.2. 此次5G业务测试活动中甲方提供的使用情况说明、测试情况报告等数据，乙方有权在测试活动需要的范围内使用，未经乙方同意，
+          甲方不得向无关的第三方披露。甲方同意，为了完善5G业务和实现本协议目的的需要，乙方可将上述数据与乙方关联公司共享。
+          乙方关联公司是指乙方现在或将来控制、受控制或与其处于共同控制下的任何公司、机构以及上述公司或机构的合法继承人。
+          其中“控制”是指直接或间接地拥有影响所提及公司管理的能力，无论是通过所有权、有投票权的股份、合同或其他被人民法院认定的方式。
+        </span>
+      </p>
+      <p
+        style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px">
+          6.3. 当甲方遇到移动电话通信障碍时（指交换设备或传输线路原因造成通信中断等现象，不包括网络覆盖和终端设备故障），
+          甲方应尽快向乙方申报，以便乙方尽快修复或者调通。
+        </span>
+      </p>
+      <p
+        style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px;font-weight: bold">
+          6.4. 甲方参与测试活动后，入网时应设置客户服务密码，服务密码是甲方业务办理的重要凭证，甲方应妥善保管。
+          使用甲方服务密码定制、变更、取消业务的行为，均被视为甲方的有效行为或甲方授权的有效行为。
+        </span>
+      </p>
+      <p style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px">
+          6.5. 因不可抗力（是指不能预见、不能避免、不能克服的客观情况，包括但不限于暴雨、洪水、火灾、干旱、风暴、台风、
+          飓风、暴风雪、泥石流、地震、爆炸、雷电、瘟疫及其他自然灾害，以及电磁干扰、战争、暴乱、政府行为、法律或政策变化、
+          罢工，以及双方一致认为是不可抗力的其它情况）而使本协议部分或全部不能履行，双方互不承担违约责任。
+        </span>
+      </p>
+      <p style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px;font-weight: bold">
+          6.6. 因一方违约给对方造成损失的，违约方应当向守约方依法承担赔偿责任，但该赔偿责任不应当包括对预期利润、
+          商业信誉、第三方损失以及其他任何间接损失的赔偿。
+        </span>
+      </p>
+      <p style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px;font-weight: bold">
+          6.7. 因国家政策或甲方上级公司政策变化而导致本协议提前终止，乙方不承担违约责任。
+        </span>
+      </p>
+      <p style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px">
+          6.8. 由于5G业务处于测试阶段，网络技术可能存在不稳定性，甲方应自备4G通信终端。如果因为测试网络质量问题导致甲方通信不畅，
+          由此导致的任何不利影响或损失，甲方同意不追究乙方的法律责任。
+        </span>
+      </p>
+      <p style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px">
+          6.9. 甲方确认，乙方依据本合同所提供的测试终端为未取得工信部入网许可的试用品，上述试用品非甲方以现金或其他支付行为购买取得，
+          甲方仅具有使用权，为终端的无偿试用者，甲乙双方之间并非买卖合同关系。在测试期间，如果甲方发现测试终端有任何缺陷、问题，
+          甲方应当及时积极地反馈给乙方。
+        </span>
+      </p>
+      <p style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px">
+          6.10. 甲方确认，乙方依据本合同所提供的资费标准范围内的5G业务为试用服务，非甲方以现金或其他支付行为购买取得。在资费标准范围内的测试活动，
+          甲方仅为无偿试用者，甲乙双方之间并非有偿服务合同关系。在测试期间，如果甲方发现5G业务服务有任何缺陷、问题，甲方应当及时积极地反馈给乙方。
+        </span>
+      </p>
+      <br>
+      <p style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-42pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px; font-weight:bold">七、协议的变更、转让及终止</span>
+      </p>
+      <p style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px">
+          7.1. 为本合同目的，甲方办理各类业务时所签署的表单应当视为本协议的补充协议。如果补充协议条款与本协议存在冲突，以补充协议为准。
+        </span>
+      </p>
+      <p style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px">
+          7.2. 根据业务测试活动开展的需要，乙方有权修改资费方案及补贴政策，但应当提前3天通过网站公告、短信、电话等形式通知甲方。
+        </span>
+      </p>
+      <p style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px">
+          7.3. 未经乙方书面同意，甲方不得将本协议项下的任何权利、义务全部或部分转让给任何第三人。
+        </span>
+      </p>
+      <p style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px">
+          7.4. 甲方可以单方解除本协议，但应当书面通知乙方。乙方在收到甲方提出的终止协议的通知当日即终止向甲方提供本协议项下的通信服务，
+          在甲方归还乙方终端、支付所有欠付费用以及履行完本协议要求的其他义务后，本协议终止。
+        </span>
+      </p>
+      <p style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;font-weight: bold">
+        <span style="font-family:仿宋; font-size:14px">
+          7.5. 下列情况下乙方有权解除协议，收回测试终端和号码，甲方不因此追究乙方的任何责任：
+        </span>
+        <span style="font-family:仿宋; font-size:14px;display:block; text-indent:1pt">（1）甲方和/或甲方的代理人提供的有效证件虚假不实；</span>
+        <span
+          style="font-family:仿宋; font-size:14px;display:block; text-indent:1pt">（2）移动电话被用于违法犯罪活动或不当用途（有损乙方或相关第三方利益）；</span>
+        <span
+          style="font-family:仿宋; font-size:14px;display:block; text-indent:1pt">（3）乙方收到有权国家机关的书面通知，要求停止为甲方提供通信服务；</span>
+        <span style="font-family:仿宋; font-size:14px;display:block; text-indent:1pt">（4）甲方未能履行协议约定的任一义务的。</span>
+      </p>
+      <p style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;font-weight: bold">
+        <span style="font-family:仿宋; font-size:14px">
+          7.6. 测试期满后或本协议约定的合同解除条件成就时，本协议终止。乙方保留向甲方追缴所欠费用的权利。
+        </span>
+      </p>
+      <p style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0">
+        <span style="font-family:仿宋; font-size:14px">
+          7.7. 乙方根据国家政策对5G网络进行调整而导致本协议无法继续履行的，乙方应在解除协议之前告知甲方。
+        </span>
+      </p>
+      <p style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;font-weight: bold">
+        <span style="font-family:仿宋; font-size:14px">
+          7.8. 乙方对各种变动采用的通知方式包括但不限于短信、网站公告、电话等。
+        </span>
+      </p>
+      <p style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-42pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px; font-weight:bold">八、其它约定</span>
+      </p>
+      <p style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px">
+          8.1. 因本协议引起的或与本协议有关的任何争议，双方可协商解决，协商不成的，双方可向电信管理部门申诉或向消费者协会等有关部门投诉，
+          如仍不能解决，则将争议提交至乙方所在地人民法院诉讼解决。
+        </span>
+      </p>
+      <p style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
+        <span style="font-family:仿宋; font-size:14px">
+          8.2. 本合同为电子合同，经系统校验（手机验证码形式）签约人为甲方集团法人或为委托经办人后，经甲方签字后生效。
+        </span>
+      </p>
+      <p style="margin:0pt 0pt 0pt 42pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0;">
         <span style="font-family:仿宋; font-size:14px; font-weight:bold">&#xa0;</span>
       </p>
 
@@ -167,10 +384,10 @@
         <span style="font-family:仿宋; font-size:14px">乙方：（盖章）</span><br>
         <span style="font-family:仿宋; font-size:14px">中国移动通信集浙江有限公司宁波分公司</span><br>
         <span style="font-family:仿宋; font-size:14px;">乙方代表：</span><br>
-        <ion-button (click)="toSignB()" *ngIf="!sign.signatureImageB" color="danger" size="small">
+        <!-- <ion-button (click)="toSignB()" *ngIf="!sign.signatureImageB" color="danger" size="small">
           点击签名
-        </ion-button>
-        <img [src]="sign.signatureImageB" *ngIf="sign.signatureImageB" (click)="toSignB()" />
+        </ion-button> -->
+        <!-- <img [src]="sign.signatureImageB" *ngIf="sign.signatureImageB" (click)="toSignB()" /> -->
         <span style="font-family:仿宋; font-size:14px">
           <ion-datetime style="padding-left: 0px;font-family:仿宋" displayFormat="YYYY年MM月DD日"
             [(ngModel)]="sign.signDateB" readonly class="datetime"></ion-datetime>

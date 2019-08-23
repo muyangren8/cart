@@ -1,5 +1,6 @@
 package com.qhj.cart.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -7,7 +8,7 @@ import java.util.Date;
  * @Author lenovo
  * @date 2019/8/13 10:44
  */
-public class Company {
+public class Company implements Serializable {
     private Long id;
     private Long mid;
     private String gname;

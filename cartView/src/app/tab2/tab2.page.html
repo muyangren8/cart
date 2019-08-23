@@ -1,29 +1,42 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="light">
     <ion-title>
       集团签约
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-list lines="none">
-    <ion-item>
-      <ion-label>选择集团</ion-label>
-      <ion-select [(ngModel)]="gid"  (ionChange)="initCust()" placeholder="请选择" cancelText="取消" okText="确认">
-        <ion-select-option *ngFor="let company of companys" [value]="company.id">{{company.gname}}</ion-select-option>
-      </ion-select>
+<ion-content class="ion-padding">
+
+  <ion-item color="light">
+    <ion-label>选择集团</ion-label>
+    <ion-select [(ngModel)]="gid" (ionChange)="initCust()" placeholder="请选择" cancelText="取消" okText="确认">
+      <ion-select-option *ngFor="let company of companys" [value]="company.id">{{company.gname}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <br>
+  <ion-list>
+    <ion-list-header color="danger">
+      <h4>客户列表</h4>
+    </ion-list-header>
+    <br>
+    <ion-item *ngFor="let cust of custs" color="light">
+      <!-- <ion-label>{{item.title}}</ion-label> -->
+      <ion-label>{{cust.cname+'  '+cust.phone}}</ion-label>
+      <ion-button (click)="toSign(cust.id)" slot="end" color="danger" *ngIf="cust.status==0">
+        签约
+      </ion-button>
     </ion-item>
   </ion-list>
-  <ion-list lines="none">
+  <!-- <ion-list lines="none">
     <ion-item>
       <ion-label>选择客户</ion-label>
-      <ion-select [(ngModel)]="cid" (ionChange)="hasCid()" placeholder="请选择" cancelText="取消" okText="确认">
-        <ion-select-option *ngFor="let cust of custs" [value]="cust.id">{{cust.cname + ' ' + cust.phone}}</ion-select-option>
+      <ion-select [(ngModel)]="cid" (ionChange)="hasCid()" placeholder="请选择" cancelText="取消" okText="确认" >
+        <ion-select-option *ngFor="let cust of custs" [value]="cust.id">{{cust.phone}}</ion-select-option>
       </ion-select>
     </ion-item>
   </ion-list>
   <ion-button (click)="toSign()" expand="block" color="danger" class="sign_btn" disabled="true" #signBtn>
     进行签约
-  </ion-button>
+  </ion-button> -->
 </ion-content>

@@ -1,5 +1,6 @@
 package com.qhj.cart.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -7,13 +8,14 @@ import java.util.Date;
  * @Author lenovo
  * @date 2019/8/13 10:48
  */
-public class Cust {
-    private Long id;
-    private Long gid;
+public class Cust implements Serializable {
+    private Long id;//客户id
+    private Long gid;//集团id
     private String phone;
-    private String cname;
+    private String cname;//客户名字
     private Date createTime;
     private Date updateTime;
+    private Integer status;//客户协议签订状态  0：未签订，1：已签订
 
     public Long getId() {
         return id;
@@ -63,8 +65,17 @@ public class Cust {
         this.updateTime = updateTime;
     }
 
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
-        return "Cust{" + "id=" + id + ", gid=" + gid + ", phone='" + phone + '\'' + ", cname='" + cname + '\'' + ", createTime=" + createTime + ", updateTime=" + updateTime + '}';
+        return "Cust{" + "id=" + id + ", gid=" + gid + ", phone='" + phone + '\'' + ", cname='" + cname + '\'' + ", createTime=" + createTime + ", updateTime=" + updateTime + ", status=" + status + '}';
     }
 }

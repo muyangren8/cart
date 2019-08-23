@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'sign-page', loadChildren: './sign-page/sign-page.module#SignPagePageModule' },
   { path: 'sign-pad', loadChildren: './sign-pad/sign-pad.module#SignPadPageModule' },
   { path: 'redirect', loadChildren: './redirect/redirect.module#RedirectPageModule' },
+  { path: 'code', loadChildren: './code/code.module#CodePageModule' },
 ];
 @NgModule({
   imports: [

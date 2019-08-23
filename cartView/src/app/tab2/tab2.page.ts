@@ -24,11 +24,11 @@ export class Tab2Page {
   }
 
   ionViewWillEnter() {
-    if(this.token!=''){
+    if (this.token != '') {
       var info = this.token.split(".")[1];
       var username = JSON.parse(window.atob(info)).name;
     }
-  
+
     this.getManagerId(username);
 
   }
@@ -37,14 +37,14 @@ export class Tab2Page {
     this.http.ajaxGet('/sign/manager/getMidByUsername?username=' + username + '&token=' + this.token).then((response: any) => {
       console.log(response)
       if (response.status == 200) {
-        this.mid=response.data;
+        this.mid = response.data;
         console.log(this.mid);
         this.initCompany(this.mid);
       } else if (response.status == -1) {
         alert(response.msg);
         localStorage.setItem('redirect', location.href);
         window.location.href = 'http://localhost:8200/tabs/tab1?order=checkLogin&redirect=' + window.location.origin + '/redirect';
-      }else {
+      } else {
         console.log(response.msg);
       }
     });
@@ -90,10 +90,22 @@ export class Tab2Page {
     }
   }
 
-  toSign() {
+  toSign(cid) {
+    this.cid = cid;
     this.storage.set("gid", this.gid);
-    this.storage.set("cid", this.cid);
+    this.storage.set("cid", cid);
     this.storage.set("mid", this.mid);
-    this.nav.navigateForward("/sign-page");
+
+    this.http.ajaxGet("/sso/getCode?cid=" + cid).then((response: any) => {
+      console.log(response);
+      if (response.code == 1) {
+        this.storage.set('phone', response.data.phone);
+        this.nav.navigateForward('/code');
+      } else {
+        alert('发送验证码失败' + response.message);
+      }
+    });
+
+    //this.nav.navigateForward("/sign-page");
   }
 }

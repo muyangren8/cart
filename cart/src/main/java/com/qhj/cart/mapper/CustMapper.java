@@ -14,4 +14,6 @@ public interface CustMapper {
     List<Cust> getCustList(Long gid);
 
     Cust getCustById(Long id);
+
+    int updateStatus(Long cid, Integer status);
 }

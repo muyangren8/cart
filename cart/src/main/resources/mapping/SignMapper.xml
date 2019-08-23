@@ -3,7 +3,7 @@
 <mapper namespace="com.qhj.cart.mapper.SignMapper">
 
     <insert id="addSign" parameterType="com.qhj.cart.domain.Sign">
-        insert into sign
+        insert into cart_sign
         (id, mid, mname, gid, gname, cid, cname, planStartDate, planEndDate, signatureImageA, signatureImageB, signDateA, signDateB)
         values
         (#{id}, #{mid}, #{mname}, #{gid}, #{gname}, #{cid}, #{cname}, #{planStartDate}, #{planEndDate}, #{signatureImageA},
@@ -11,6 +11,6 @@
     </insert>
 
     <select id="getSignById" parameterType="long" resultType="com.qhj.cart.domain.Sign">
-        select * from sign where id = #{id}
+        select * from cart_sign where id = #{id}
     </select>
 </mapper>

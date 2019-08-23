@@ -4,6 +4,7 @@ import com.qhj.cart.domain.Cust;
 import com.qhj.cart.mapper.CustMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -12,6 +13,7 @@ import java.util.List;
  * @date 2019/8/13 11:04
  */
 @Service
+@Transactional
 public class CustService {
     private CustMapper custMapper;
     @Autowired

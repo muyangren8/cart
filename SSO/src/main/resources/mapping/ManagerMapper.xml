@@ -6,16 +6,16 @@
         <result column="username" jdbcType="VARCHAR" property="username" />
         <result column="password" jdbcType="VARCHAR" property="password" />
         <result column="realName" jdbcType="VARCHAR" property="realName" />
-        <result column="createTime" jdbcType="TIMESTAMP" property="createTime"/>
-        <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="createTime" jdbcType="DATE" property="createTime"/>
+        <result column="updateTime" jdbcType="DATE" property="updateTime"/>
     </resultMap>
 
 
     <select id="getManagerById" parameterType="long" resultType="com.infinova.sso.entity.Manager">
-        select * from manager where id = #{id}
+        select * from cart_manager where id = #{id}
     </select>
 
     <select id="getManagerByUsername" resultType="com.infinova.sso.entity.Manager">
-        select * from manager where username = #{username}
+        select * from cart_manager where username = #{username}
     </select>
 </mapper>

@@ -13,9 +13,9 @@ export class SignPagePage implements OnInit {
   private token: any = '';
   private gname: any = '';
   private cname: any = '';
-  private gid: any = this.storage.get("gid");
-  private cid: any = this.storage.get("cid");
-  private mid: any = this.storage.get("mid");
+  private gid: any = '';
+  private cid: any = '';
+  private mid: any = '';
   private sign: any = {
     mid: '',
     gid: '',
@@ -27,7 +27,7 @@ export class SignPagePage implements OnInit {
     signDateA: '',
     signDateB: '',
     signatureImageA: '',
-    signatureImageB: '',
+    signatureImageB: 'chinamobile',
   }
 
   constructor(public http: HttpService, public storage: StorageService,
@@ -41,13 +41,16 @@ export class SignPagePage implements OnInit {
 
   ionViewWillEnter() {
     console.log('进入了');
+    this.gid = this.storage.get("gid");
+    this.cid = this.storage.get("cid");
+    this.mid = this.storage.get("mid");
     this.sign.signatureImageA = this.storage.get('signatureImageA');
+    this.initName();
     //console.log(this.sign.signatureImageA);
-    this.sign.signatureImageB = this.storage.get('signatureImageB');
   }
 
   ngOnInit() {
-    this.initName();
+   
   }
 
   initName() {
@@ -88,14 +91,14 @@ export class SignPagePage implements OnInit {
     this.storage.set('signImageFlag', 'signatureImageA');
   }
 
-  toSignB() {
-    this.nav.navigateForward('/sign-pad');
-    this.storage.set('signImageFlag', 'signatureImageB');
-  }
+  /*  toSignB() {
+     this.nav.navigateForward('/sign-pad');
+     this.storage.set('signImageFlag', 'signatureImageB');
+   } */
 
   doSign() {
     //补充字段
-    this.sign.cid = this.mid;
+    this.sign.cid = this.cid;
     this.sign.cname = this.cname;
     this.sign.gid = this.gid;
     this.sign.gname = this.gname;
@@ -115,6 +118,6 @@ export class SignPagePage implements OnInit {
     //清除localStorage
     this.storage.remove('signImageFlag');
     this.storage.remove('signatureImageA');
-    this.storage.remove('signatureImageB');
+    //this.storage.remove('signatureImageB');
   }
 }

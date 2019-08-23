@@ -3,10 +3,15 @@ server:
 
 spring:
   datasource:
-    username: root
-    password: muyangren8
-    url: jdbc:mysql://localhost:3306/chartView?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: smssend
+    password: smssend
+    url: jdbc:oracle:thin:@111.1.1.82:1521:spora
+    driver-class-name: oracle.jdbc.OracleDriver
+    type: org.apache.commons.dbcp2.BasicDataSource
+    dbcp2:
+      default-transaction-isolation: 2
+      max-wait-millis: 10000
+
 
 mybatis:
   mapper-locations: classpath:mapping/*Mapper.xml
@@ -18,3 +23,7 @@ logging:
     com:
       example:
         mapper : debug
+
+
+#市场服务端ip
+cartSeverHost: http://localhost:8080

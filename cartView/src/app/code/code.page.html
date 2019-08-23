@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>用户校验</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="code_info">
+    <p class="code_sign_p">验证码已通过短信方式发送至{{phone}}，请输入验证码完成验证，用户校验是为了验证用户的真实性和账号安全</p>
+  </div>
+
+  <div class="sign_info">
+
+    <input type="text" placeholder="验证码" [(ngModel)]="code" (ionChange)="checkCode()"/>
+    <div class="timer" *ngIf="!sendCodeBtn">
+      倒计时{{num}}
+    </div>
+
+    <div class="timer" *ngIf="sendCodeBtn" (click)="sendCode()" >
+      重新发送验证码
+    </div>
+  </div>
+  <ion-button (click)="doRegister3()" expand="block" color="danger" class="login_btn">
+    下一步
+  </ion-button>
+
+
+</ion-content>
