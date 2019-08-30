@@ -1,6 +1,7 @@
 package com.qhj.cart.domain;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Date;
 
 /**
@@ -16,12 +17,23 @@ public class Sign implements Serializable {
     private String gname;
     private Long cid;
     private String cname;
+    private String plan;
     private Date planStartDate;
     private Date planEndDate;
     private String signatureImageA;
     private String signatureImageB;
+    private byte[] imageA;
+    private byte[] imageB;
     private Date signDateA;
     private Date signDateB;
+
+    public String getPlan() {
+        return plan;
+    }
+
+    public void setPlan(String plan) {
+        this.plan = plan;
+    }
 
     public Long getId() {
         return id;
@@ -95,21 +107,6 @@ public class Sign implements Serializable {
         this.planEndDate = planEndDate;
     }
 
-    public String getSignatureImageA() {
-        return signatureImageA;
-    }
-
-    public void setSignatureImageA(String signatureImageA) {
-        this.signatureImageA = signatureImageA;
-    }
-
-    public String getSignatureImageB() {
-        return signatureImageB;
-    }
-
-    public void setSignatureImageB(String signatureImageB) {
-        this.signatureImageB = signatureImageB;
-    }
 
     public Date getSignDateA() {
         return signDateA;
@@ -127,8 +124,40 @@ public class Sign implements Serializable {
         this.signDateB = signDateB;
     }
 
+    public String getSignatureImageA() {
+        return signatureImageA;
+    }
+
+    public void setSignatureImageA(String signatureImageA) {
+        this.signatureImageA = signatureImageA;
+    }
+
+    public String getSignatureImageB() {
+        return signatureImageB;
+    }
+
+    public void setSignatureImageB(String signatureImageB) {
+        this.signatureImageB = signatureImageB;
+    }
+
+    public byte[] getImageA() {
+        return imageA;
+    }
+
+    public void setImageA(byte[] imageA) {
+        this.imageA = imageA;
+    }
+
+    public byte[] getImageB() {
+        return imageB;
+    }
+
+    public void setImageB(byte[] imageB) {
+        this.imageB = imageB;
+    }
+
     @Override
     public String toString() {
-        return "Sign{" + "id=" + id + ", mid=" + mid + ", mname='" + mname + '\'' + ", gid=" + gid + ", gname='" + gname + '\'' + ", cid=" + cid + ", cname='" + cname + '\'' + ", planStartDate=" + planStartDate + ", planEndDate=" + planEndDate + ", signatureImageA='" + signatureImageA + '\'' + ", signatureImageB='" + signatureImageB + '\'' + ", signDateA=" + signDateA + ", signDateB=" + signDateB + '}';
+        return "Sign{" + "id=" + id + ", mid=" + mid + ", mname='" + mname + '\'' + ", gid=" + gid + ", gname='" + gname + '\'' + ", cid=" + cid + ", cname='" + cname + '\'' + ", planStartDate=" + planStartDate + ", planEndDate=" + planEndDate + ", signatureImageA='" + signatureImageA + '\'' + ", signatureImageB='" + signatureImageB + '\'' + ", imageA=" + Arrays.toString(imageA) + ", imageB=" + Arrays.toString(imageB) + ", signDateA=" + signDateA + ", signDateB=" + signDateB + '}';
     }
 }

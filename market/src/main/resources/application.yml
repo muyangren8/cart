@@ -1,0 +1,35 @@
+server:
+  port: 8098
+  servlet:
+    context-path: /market
+spring:
+  datasource:
+    username: smssend
+    password: smssend
+    url: jdbc:oracle:thin:@111.1.1.82:1521:spora
+#    username: scott
+#    password: muyangren8
+#    url: jdbc:oracle:thin:@localhost:1521:orcl
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    type: org.apache.commons.dbcp2.BasicDataSource
+    dbcp2:
+      default-transaction-isolation: 2
+      max-wait-millis: 10000
+
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: com.market.domain
+
+#showSql
+logging:
+  level:
+    com:
+      example:
+        mapper : debug
+
+
+# jwt过期时间，单位分钟
+jwt_expire_time: 1440
+
+
+

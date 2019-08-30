@@ -4,27 +4,27 @@
 
 
     <insert id="insertCode">
-        insert into cart_code (phone, code)
-        VALUES (#{phone}, #{code});
+        insert into "cart_code" ("phone", "code")
+        VALUES (#{phone}, #{code})
     </insert>
 
     <update id="updateCode" parameterType="string">
-        update cart_code
-        set code = #{code}
-        where phone = #{phone};
+        update "cart_code"
+        set "code" = #{code}
+        where "phone" = #{phone}
 
     </update>
 
     <delete id="deleteCode" parameterType="string">
         delete
-        from cart_code
-        where phone = #{phone};
+        from "cart_code"
+        where "phone" = #{phone}
 
     </delete>
 
     <select id="getCode" parameterType="string" resultType="java.lang.String">
-        select cart_code
-        from code
-        where phone = #{phone};
+        select "code"
+        from "cart_code"
+        where "phone" = #{phone}
     </select>
 </mapper>

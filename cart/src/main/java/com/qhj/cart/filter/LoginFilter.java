@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-
 @Component
 @WebFilter(urlPatterns = "/**", filterName = "loginFilter")
 public class LoginFilter implements Filter {
@@ -60,7 +59,7 @@ public class LoginFilter implements Filter {
                 return false;
             }
 //            JSONObject object = HttpClient.get("http://localhost:8080/sso/checkJwt?token=" + jwt);
-            JSONObject object = HttpClient.get(cartSeverHost+ "/sso/checkJwt?token=" + jwt);
+            JSONObject object = HttpClient.get(cartSeverHost + "/sso/checkJwt?token=" + jwt);
             return object.getBoolean("data");
         } catch (Exception e) {
             logger.error("向认证中心请求失败", e);

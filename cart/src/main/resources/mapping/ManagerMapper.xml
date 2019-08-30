@@ -11,14 +11,14 @@
     </resultMap>
 
     <select id="getManagerList" resultMap="BaseResultMap">
-        select * from cart_manager
+        select * from "cart_manager"
     </select>
 
     <select id="getManagerById" parameterType="long" resultType="com.qhj.cart.domain.Manager">
-        select * from cart_manager where id = #{id}
+        select * from "cart_manager" where "id" = #{id}
     </select>
 
     <select id="getMidByUsername" parameterType="string" resultType="java.lang.Long">
-        select id from cart_manager where username = #{username}
+        select "id" from "cart_manager" where "username" = #{username}
     </select>
 </mapper>

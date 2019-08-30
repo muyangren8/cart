@@ -1,5 +1,6 @@
 package com.infinova.sso.service;
 
+import com.demo.wxwgbt.DownMsg;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.infinova.sso.entity.Manager;
 import com.infinova.sso.entity.Token;
@@ -9,6 +10,7 @@ import com.infinova.sso.mapper.CustMapper;
 import com.infinova.sso.mapper.ManagerMapper;
 import com.infinova.sso.mapper.TokenMapper;
 import com.infinova.sso.util.JwtUtil;
+import com.infinova.sso.util.SendMsgUtil;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
@@ -20,7 +22,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
@@ -57,6 +58,7 @@ public class JwtService {
         //进行登录校验
         try {
             Manager existManager = managerMapper.getManagerByUsername(manager.getUsername());
+            System.out.println(existManager);
             if (Objects.equals(existManager.getPassword(), manager.getPassword())) {
                 return this.generateNewJwt(existManager.getUsername());
             } else {
@@ -143,21 +145,28 @@ public class JwtService {
         return i == 1;
     }
 
-    public Map getCode(Long cid) {
+    public Boolean getCode(Long cid) {
         String phone = getPhoneByCid(cid);
         String code = String.valueOf((int) ((Math.random() * 9 + 1) * 100000));
 
         //RedisUtil.set(phone, code, 1000 * 40);
-        String existCode = codeMapper.getCode(phone);
-        if (existCode == null) {
-            codeMapper.insertCode(phone, code);
-        } else {
-            codeMapper.updateCode(phone, code);
+        try {
+            DownMsg downMsg = new DownMsg(phone, "【甬移微入口】您的验证码为" + code + ",请使用验证码进行登陆,半小时内有效。");
+            SendMsgUtil.send(downMsg.toString());
+
+            String existCode = codeMapper.getCode(phone);
+            if (existCode == null) {
+                codeMapper.insertCode(phone, code);
+            } else {
+                codeMapper.updateCode(phone, code);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
         }
-        Map map = new HashMap();
-        map.put("phone", phone);
-        map.put("code", code);
-        return map;
+
+        return true;
     }
 
     private String getPhoneByCid(Long cid) {

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.market.mapper.TokenMapper">
+    <resultMap id="BaseResultMap" type="com.market.domain.Token">
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="sign" jdbcType="VARCHAR" property="sign" />
+    </resultMap>
+
+    <insert id="insertToken">
+        insert into CART_TOKEN
+            (NAME, SIGN)
+        values
+            (#{name}, #{sign})
+    </insert>
+
+    <update id="updateToken">
+        update CART_TOKEN set SIGN = #{sign} where NAME = #{name}
+    </update>
+
+    <delete id="deleteToken" parameterType="string">
+        delete from CART_TOKEN where SIGN = #{sign}
+    </delete>
+
+    <select id="getToken"  resultType="com.market.domain.Token">
+        select * from CART_TOKEN where NAME = #{name}
+    </select>
+
+    <select id="getTokenBySign" parameterType="string" resultType="com.market.domain.Token">
+        select * from CART_TOKEN where SIGN = #{sign}
+    </select>
+
+</mapper>

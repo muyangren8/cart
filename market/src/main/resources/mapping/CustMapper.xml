@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.market.mapper.CustMapper">
+    <resultMap id="BaseResultMap" type="com.market.domain.Cust">
+        <result column="id" jdbcType="BIGINT" property="id"/>
+        <result column="gid" jdbcType="BIGINT" property="gid"/>
+        <result column="phone" jdbcType="VARCHAR" property="phone"/>
+        <result column="cname" jdbcType="VARCHAR" property="cname"/>
+        <result column="createTime" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+    </resultMap>
+
+    <update id="updateStatus">
+        update CART_CUST
+        set STATUS = #{status}
+        where ID = #{cid}
+    </update>
+
+    <select id="getCustList" resultMap="BaseResultMap">
+        select *
+        from CART_CUST
+        where GID = #{gid}
+    </select>
+
+    <select id="getCustById" resultType="com.market.domain.Cust">
+        select *
+        from CART_CUST
+        where ID = #{id}
+    </select>
+
+    <select id="getPhoneByCid" parameterType="long" resultType="java.lang.String">
+        select PHONE
+        from CART_CUST
+        where ID = #{cid}
+    </select>
+</mapper>

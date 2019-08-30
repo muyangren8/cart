@@ -18,7 +18,7 @@ export class SignPadPage {
   private signaturePadOptions: Object = {
     'maxWidth': 1,
     'minWidth': 1,
-    'canvasWidth': 350,
+    'canvasWidth': 400,
     'canvasHeight': 300,
   };
 

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.market.mapper.CodeMapper">
+
+
+    <insert id="insertCode">
+        insert into CART_CODE (PHONE, CODE)
+        VALUES (#{phone}, #{code})
+    </insert>
+
+    <update id="updateCode" parameterType="string">
+        update CART_CODE
+        set CODE = #{code}
+        where PHONE = #{phone}
+
+    </update>
+
+    <delete id="deleteCode" parameterType="string">
+        delete
+        from CART_CODE
+        where PHONE = #{phone}
+
+    </delete>
+
+    <select id="getCode" parameterType="string" resultType="java.lang.String">
+        select CODE
+        from CART_CODE
+        where PHONE = #{phone}
+    </select>
+</mapper>

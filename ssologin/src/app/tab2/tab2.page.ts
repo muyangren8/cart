@@ -23,7 +23,7 @@ export class Tab2Page {
     var api = '/sso/login';
     this.common.ajaxPostSSO(api, this.manager).then((response: any) => {
       console.log(response);
-      if (response.code == 1) {
+      if (response.status == 200) {
         alert("登录成功，跳转到回调地址");
         //this.storage.set('token', response.data);
         localStorage.setItem('token', response.data);

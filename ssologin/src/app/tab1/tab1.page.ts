@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { CommonService } from "../services/common.service";
 import { NavController } from '@ionic/angular';
 import { StorageService } from "../services/storage.service";
-import { EventService } from "../services/event.service";
 
 
 
@@ -18,7 +17,7 @@ export class Tab1Page implements OnInit {
 
   
 
-  constructor(public common: CommonService, public nav: NavController, public storage: StorageService, public event: EventService) { }
+  constructor(public common: CommonService, public nav: NavController, public storage: StorageService) { }
 
   ngOnInit() {
     this.token = localStorage.getItem('token');
@@ -43,7 +42,7 @@ export class Tab1Page implements OnInit {
       var api = '/sso/checkJwt?token=' + token;
       this.common.ajaxGet(api).then((responese: any) => {
         console.log(responese);
-        if (responese.data) {
+        if (responese.status==200) {
           window.location.href = this.getUrlParam('redirect') + "?token=" + localStorage.getItem('token');
         } else {
           this.goLogin();

@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>用户登陆</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>用户名：</ion-label>
+      <ion-input [(ngModel)]="manager.username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>密码：</ion-label>
+      <ion-input [(ngModel)]="manager.password"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-button (click)="doLogin()" class="login_btn" expand="block" color="danger">
+    登陆
+  </ion-button>
+  <br>
+  <ion-button (click)="back()" class="login_btn" expand="block" color="dark">
+    返回
+  </ion-button>
+</ion-content>

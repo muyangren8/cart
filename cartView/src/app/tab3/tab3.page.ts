@@ -17,30 +17,25 @@ export class Tab3Page {
   }
 
   ionViewWillEnter() {
-    var info = localStorage.getItem("token").split(".")[1];
-    var username = JSON.parse(window.atob(info)).name;
-    //var userName = window.atob(info);
-    //this.username=this.token;
-    this.username = username;
+    this.username = this.storage.get('username');
   }
 
   
 
   //跳转到登陆界面
   goToLogin() {
-    localStorage.setItem("redirect", location.href);
-    window.location.href = 'http://localhost:8200/tabs/tab1?order=checkLogin&redirect=' + window.location.origin + '/redirect';
+    this.nav.navigateForward('/login');
   }
 
   //注销登陆
   loginOut() {
-    var api = '/sso/inValid?token=' + localStorage.getItem('token');
+    var api = '/market/sso/inValid?token=' + localStorage.getItem('token');
     this.http.ajaxGet(api).then((response: any) => {
       console.log(response);
-      if (response.code == 1 && response.data == null) {
+      if (response.status == 200) {
         alert('注销成功');
         this.username = '';
-        this.storage.remove('token');
+        localStorage.clear();
       } else {
         alert('注销失败');
       }

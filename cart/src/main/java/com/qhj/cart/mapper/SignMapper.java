@@ -13,4 +13,6 @@ public interface SignMapper {
     Integer addSign(Sign sign);
 
     Sign getSignById(Long id);
+
+    Sign getSignByCid(Long cid);
 }

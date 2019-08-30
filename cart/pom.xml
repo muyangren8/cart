@@ -11,7 +11,7 @@
 	<groupId>com.qhj</groupId>
 	<artifactId>cart</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<name>cart</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -76,11 +76,20 @@
 	</dependencies>
 
 	<build>
+        <finalName>cart</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
 		</plugins>
 	</build>
 

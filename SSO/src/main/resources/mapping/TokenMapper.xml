@@ -7,26 +7,26 @@
     </resultMap>
 
     <insert id="insertToken">
-        insert into cart_token
-            (name, sign)
+        insert into "cart_token"
+            ("name", "sign")
         values
-            (#{name}, #{sign});
+            (#{name}, #{sign})
     </insert>
 
     <update id="updateToken">
-        update cart_token set sign = #{sign} where name = #{name};
+        update "cart_token" set "sign" = #{sign} where "name" = #{name}
     </update>
 
     <delete id="deleteToken" parameterType="string">
-        delete from cart_token where sign = #{sign};
+        delete from "cart_token" where "sign" = #{sign}
     </delete>
 
-    <select id="getToken" parameterType="string" resultType="com.infinova.sso.entity.Token">
-        select * from cart_token where name = #{name};
+    <select id="getToken"  resultType="com.infinova.sso.entity.Token">
+        select * from "cart_token" where "name" = #{name}
     </select>
 
     <select id="getTokenBySign" parameterType="string" resultType="com.infinova.sso.entity.Token">
-        select * from cart_token where sign = #{sign};
+        select * from "cart_token" where "sign" = #{sign}
     </select>
 
 </mapper>

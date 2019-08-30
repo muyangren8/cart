@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,8 @@ export class HttpService {
 
   ajaxGet(url: any) {
     return new Promise((resove, reject) => {
-      this.httpclient.get(url).subscribe((response) => {
+      this.httpclient.get('http://wap.139nb.cn' + url).subscribe((response) => {
+      // this.httpclient.get(url).subscribe((response) => {
         resove(response);
       }, (err) => {
         reject(err);
@@ -20,12 +21,14 @@ export class HttpService {
 
   ajaxPost(url: string, json: object) {
     return new Promise((resove, reject) => {
-      this.httpclient.post(url, json).subscribe((response) => {
+      this.httpclient.post('http://wap.139nb.cn' + url, json).subscribe((response) => {
+      // this.httpclient.post(url, json).subscribe((response) => {
         resove(response);
       }, (err) => {
         reject(err);
       });
     });
   }
+
 
 }

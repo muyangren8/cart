@@ -11,6 +11,6 @@
     </resultMap>
 
     <select id="getPhoneByCid" parameterType="long" resultType="java.lang.String">
-        select cart_phone from cust where id = #{cid};
+        select "phone" from "cart_cust" where "id" = #{cid}
     </select>
 </mapper>

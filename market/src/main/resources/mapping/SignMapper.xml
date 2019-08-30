@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.market.mapper.SignMapper">
+    <resultMap id="BaseResultMap" type="com.market.domain.Sign">
+        <result column="id" jdbcType="BIGINT" property="id"/>
+        <result column="mid" jdbcType="BIGINT" property="mid"/>
+        <result column="mname" jdbcType="VARCHAR" property="mname"/>
+        <result column="gid" jdbcType="BIGINT" property="gid"/>
+        <result column="gname" jdbcType="VARCHAR" property="gname"/>
+        <result column="cid" jdbcType="BIGINT" property="cid"/>
+        <result column="cname" jdbcType="VARCHAR" property="cname"/>
+        <result column="aPlanNum" jdbcType="INTEGER" property="aPlanNum"/>
+        <result column="bPlanNum" jdbcType="INTEGER" property="bPlanNum"/>
+        <result column="cPlanNum" jdbcType="INTEGER" property="cPlanNum"/>
+        <result column="planStartDate" jdbcType="TIMESTAMP" property="planStartDate"/>
+        <result column="planEndDate" jdbcType="TIMESTAMP" property="planEndDate"/>
+        <result column="signDateA" jdbcType="TIMESTAMP" property="signDateA"/>
+        <result column="signDateB" jdbcType="TIMESTAMP" property="signDateB"/>
+        <result column="imageA" jdbcType="BLOB" property="imageA"/>
+        <result column="imageB" jdbcType="BLOB" property="imageB"/>
+    </resultMap>
+
+    <insert id="addSign" parameterType="com.market.domain.Sign">
+        insert into CART_SIGN
+        (ID, MID, MNAME, GID, GNAME, CID, CNAME, APLANNUM,BPLANNUM, CPLANNUM,PLANSTARTDATE, PLANENDDATE, SIGNDATEA, SIGNDATEB, IMAGEA, IMAGEB)
+        values (#{id}, #{mid}, #{mname}, #{gid}, #{gname}, #{cid}, #{cname},#{aPlanNum},#{bPlanNum},#{cPlanNum}, #{planStartDate}, #{planEndDate}, #{signDateA}, #{signDateB},
+                #{imageA}, #{imageB})
+    </insert>
+
+    <select id="getSignById" parameterType="long" resultType="com.market.domain.Sign">
+        select *
+        from CART_SIGN
+        where ID = #{id}
+    </select>
+
+    <select id="getSignByCid" parameterType="long" resultType="com.market.domain.Sign">
+        select *
+        from CART_SIGN
+        where CID = #{cid}
+    </select>
+</mapper>

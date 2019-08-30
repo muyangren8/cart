@@ -8,8 +8,10 @@ const routes: Routes = [
   },
   { path: 'sign-page', loadChildren: './sign-page/sign-page.module#SignPagePageModule' },
   { path: 'sign-pad', loadChildren: './sign-pad/sign-pad.module#SignPadPageModule' },
-  { path: 'redirect', loadChildren: './redirect/redirect.module#RedirectPageModule' },
   { path: 'code', loadChildren: './code/code.module#CodePageModule' },
+  { path: 'sign-view', loadChildren: './sign-view/sign-view.module#SignViewPageModule' },
+  { path: 'login', loadChildren: './login/login/login.module#LoginPageModule' },
+  { path: 'policy', loadChildren: './policy/policy.module#PolicyPageModule' },
 ];
 @NgModule({
   imports: [

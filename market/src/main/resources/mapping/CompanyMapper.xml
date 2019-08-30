@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.market.mapper.CompanyMapper">
+    <resultMap id="BaseResultMap" type="com.market.domain.Company">
+        <result column="id" jdbcType="BIGINT" property="id" />
+        <result column="mid" jdbcType="BIGINT" property="mid" />
+        <result column="gname" jdbcType="VARCHAR" property="gname" />
+        <result column="createTime" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime"/>
+    </resultMap>
+
+    <select id="getCompanyList" parameterType="long" resultMap="BaseResultMap">
+        select * from CART_COMPANY where MID = #{mid}
+    </select>
+
+    <select id="getCompanyById" parameterType="long" resultType="com.market.domain.Company">
+        select * from CART_COMPANY where ID = #{id}
+    </select>
+
+</mapper>

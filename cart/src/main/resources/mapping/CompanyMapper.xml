@@ -10,10 +10,10 @@
     </resultMap>
 
     <select id="getCompanyList" parameterType="long" resultMap="BaseResultMap">
-        select * from cart_company where mid = #{mid}
+        select * from "cart_company" where "mid" = #{mid}
     </select>
 
     <select id="getCompanyById" parameterType="long" resultType="com.qhj.cart.domain.Company">
-        select * from cart_company where id = #{id}
+        select * from "cart_company" where "id" = #{id}
     </select>
 </mapper>

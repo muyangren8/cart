@@ -12,10 +12,10 @@
 
 
     <select id="getManagerById" parameterType="long" resultType="com.infinova.sso.entity.Manager">
-        select * from cart_manager where id = #{id}
+        select * from "cart_manager" where "id" = #{id}
     </select>
 
     <select id="getManagerByUsername" resultType="com.infinova.sso.entity.Manager">
-        select * from cart_manager where username = #{username}
+        select * from "cart_manager" where "username" = #{username}
     </select>
 </mapper>

@@ -1,16 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.qhj.cart.mapper.SignMapper">
+    <resultMap id="BaseResultMap" type="com.qhj.cart.domain.Sign">
+        <result column="id" jdbcType="BIGINT" property="id"/>
+        <result column="mid" jdbcType="BIGINT" property="mid"/>
+        <result column="mname" jdbcType="VARCHAR" property="mname"/>
+        <result column="gid" jdbcType="BIGINT" property="gid"/>
+        <result column="gname" jdbcType="VARCHAR" property="gname"/>
+        <result column="cid" jdbcType="BIGINT" property="cid"/>
+        <result column="cname" jdbcType="VARCHAR" property="cname"/>
+        <result column="plan" jdbcType="VARCHAR" property="plan"/>
+        <result column="planStartDate" jdbcType="TIMESTAMP" property="planStartDate"/>
+        <result column="planEndDate" jdbcType="TIMESTAMP" property="planEndDate"/>
+        <result column="signDateA" jdbcType="TIMESTAMP" property="signDateA"/>
+        <result column="signDateB" jdbcType="TIMESTAMP" property="signDateB"/>
+        <result column="imageA" jdbcType="BLOB" property="imageA"/>
+        <result column="imageB" jdbcType="BLOB" property="imageB"/>
+    </resultMap>
 
     <insert id="addSign" parameterType="com.qhj.cart.domain.Sign">
-        insert into cart_sign
-        (id, mid, mname, gid, gname, cid, cname, planStartDate, planEndDate, signatureImageA, signatureImageB, signDateA, signDateB)
-        values
-        (#{id}, #{mid}, #{mname}, #{gid}, #{gname}, #{cid}, #{cname}, #{planStartDate}, #{planEndDate}, #{signatureImageA},
-                #{signatureImageB}, #{signDateA}, #{signDateB})
+        insert into "cart_sign"
+        ("id", "mid", "mname", "gid", "gname", "cid", "cname", "plan","planStartDate", "planEndDate", "signDateA", "signDateB", "imageA", "imageB")
+        values (#{id}, #{mid}, #{mname}, #{gid}, #{gname}, #{cid}, #{cname},#{plan}, #{planStartDate}, #{planEndDate}, #{signDateA}, #{signDateB},
+                #{imageA}, #{imageB})
     </insert>
 
     <select id="getSignById" parameterType="long" resultType="com.qhj.cart.domain.Sign">
-        select * from cart_sign where id = #{id}
+        select *
+        from "cart_sign"
+        where "id" = #{id}
+    </select>
+
+    <select id="getSignByCid" parameterType="long" resultType="com.qhj.cart.domain.Sign">
+        select *
+        from "cart_sign"
+        where "cid" = #{cid}
     </select>
 </mapper>

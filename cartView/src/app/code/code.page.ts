@@ -31,9 +31,9 @@ export class CodePage implements OnInit {
   }
 
   doRegister3() {
-    this.http.ajaxGet('/sso/checkCode?phone=' + this.phone + '&code=' + this.code).then((response: any) => {
+    this.http.ajaxGet('/market/sso/checkCode?phone=' + this.phone + '&code=' + this.code).then((response: any) => {
       console.log(response);
-      if (response.code == 1) {
+      if (response.status == 200) {
         //保存验证码
         this.nav.navigateForward('/sign-page');
       } else {
@@ -55,15 +55,15 @@ export class CodePage implements OnInit {
 
   //重新发送验证码
   sendCode() {
-    this.http.ajaxGet("/sso/getCode?cid=" + this.cid).then((response: any) => {
+    this.http.ajaxGet("/market/sso/getCode?cid=" + this.cid).then((response: any) => {
       console.log(response);
-      if (response.code == 1) {
+      if (response.status == 200) {
         alert('发送验证码成功');
         this.num = 30;
         this.sendCodeBtn = false;
         this.doTimer();
       } else {
-        alert(response.message);
+        alert(response.msg);
       }
 
     });

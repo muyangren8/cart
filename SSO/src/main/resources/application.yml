@@ -9,7 +9,10 @@ spring:
     username: smssend
     password: smssend
     url: jdbc:oracle:thin:@111.1.1.82:1521:spora
-    driver-class-name: oracle.jdbc.OracleDriver
+#    username: scott
+#    password: muyangren8
+#    url: jdbc:oracle:thin:@localhost:1521:orcl
+    driver-class-name: oracle.jdbc.driver.OracleDriver
     type: org.apache.commons.dbcp2.BasicDataSource
     dbcp2:
       default-transaction-isolation: 2

@@ -20,21 +20,28 @@ export class Tab2Page {
   @ViewChild("signBtn", { static: false }) signBtn;
 
   constructor(public http: HttpService, public storage: StorageService, public nav: NavController) {
-    this.token = localStorage.getItem('token');
+
   }
+
+
 
   ionViewWillEnter() {
-    if (this.token != '') {
+    this.token = localStorage.getItem('token');
+    if (this.token != null) {
       var info = this.token.split(".")[1];
       var username = JSON.parse(window.atob(info)).name;
+      this.getManagerId(username);
+    } else {
+      //localStorage.setItem('redirect', location.href);
+      //window.location.href = 'http://localhost:8200/tabs/tab1?order=checkLogin&redirect=' + window.location.origin + '/redirect';
+      this.nav.navigateForward('/login')
     }
-
-    this.getManagerId(username);
-
   }
 
+
+
   getManagerId(username) {
-    this.http.ajaxGet('/sign/manager/getMidByUsername?username=' + username + '&token=' + this.token).then((response: any) => {
+    this.http.ajaxGet('/market/manager/getMidByUsername?username=' + username + '&token=' + this.token).then((response: any) => {
       console.log(response)
       if (response.status == 200) {
         this.mid = response.data;
@@ -42,8 +49,9 @@ export class Tab2Page {
         this.initCompany(this.mid);
       } else if (response.status == -1) {
         alert(response.msg);
-        localStorage.setItem('redirect', location.href);
-        window.location.href = 'http://localhost:8200/tabs/tab1?order=checkLogin&redirect=' + window.location.origin + '/redirect';
+        //localStorage.setItem('redirect', location.href);
+        //window.location.href = 'http://localhost:8200/tabs/tab1?order=checkLogin&redirect=' + window.location.origin + '/redirect';
+        this.nav.navigateForward('/login')
       } else {
         console.log(response.msg);
       }
@@ -51,14 +59,15 @@ export class Tab2Page {
   }
 
   initCompany(mid) {
-    this.http.ajaxGet("/sign/company/getCompanyList?mid=" + mid + "&token=" + this.token).then((response: any) => {
+    this.http.ajaxGet("/market/company/getCompanyList?mid=" + mid + "&token=" + this.token).then((response: any) => {
       console.log(response);
       if (response.status == 200) {
         this.companys = response.data;
       } else if (response.status == -1) {
         alert(response.msg);
-        localStorage.setItem('redirect', location.href);
-        window.location.href = 'http://localhost:8200/tabs/tab1?order=checkLogin&redirect=' + window.location.origin + '/redirect';
+        //localStorage.setItem('redirect', location.href);
+        //window.location.href = 'http://localhost:8200/tabs/tab1?order=checkLogin&redirect=' + window.location.origin + '/redirect';
+        this.nav.navigateForward('/login')
       }
       else {
         alert(response.msg);
@@ -67,14 +76,16 @@ export class Tab2Page {
   }
 
   initCust() {
-    this.http.ajaxGet("/sign/cust/getCustList?gid=" + this.gid + "&token=" + this.token).then((response: any) => {
+    this.http.ajaxGet("/market/cust/getCustList?gid=" + this.gid + "&token=" + this.token).then((response: any) => {
       console.log(response);
       if (response.status == 200) {
         this.custs = response.data;
-      } else if (response.status == -1) {
+      }
+      else if (response.status == -1) {
         alert(response.msg);
-        localStorage.setItem('redirect', location.href);
-        window.location.href = 'http://localhost:8200/tabs/tab1?order=checkLogin&redirect=' + window.location.origin + '/redirect';
+        //localStorage.setItem('redirect', location.href);
+        //window.location.href = 'http://localhost:8200/tabs/tab1?order=checkLogin&redirect=' + window.location.origin + '/redirect';
+        this.nav.navigateForward('/login')
       }
       else {
         alert(response.msg);
@@ -96,16 +107,24 @@ export class Tab2Page {
     this.storage.set("cid", cid);
     this.storage.set("mid", this.mid);
 
-    this.http.ajaxGet("/sso/getCode?cid=" + cid).then((response: any) => {
+    this.http.ajaxGet("/market/sso/getCode?cid=" + cid).then((response: any) => {
       console.log(response);
-      if (response.code == 1) {
-        this.storage.set('phone', response.data.phone);
+      if (response.status == 200) {
+        this.storage.set('phone', response.data);
         this.nav.navigateForward('/code');
       } else {
-        alert('发送验证码失败' + response.message);
+        alert('发送验证码失败' + response.msg);
       }
     });
 
     //this.nav.navigateForward("/sign-page");
+  }
+
+  toView(cid) {
+    this.nav.navigateForward(['/sign-view'], {
+      queryParams: {
+        cid: cid
+      }
+    });
   }
 }

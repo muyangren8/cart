@@ -12,20 +12,20 @@
     </resultMap>
 
     <update id="updateStatus">
-        update cart_cust
-        set status = #{status}
-        where id = #{cid}
+        update "cart_cust"
+        set "status" = #{status}
+        where "id" = #{cid}
     </update>
 
     <select id="getCustList" resultMap="BaseResultMap">
         select *
-        from cart_cust
-        where gid = #{gid}
+        from "cart_cust"
+        where "gid" = #{gid}
     </select>
 
     <select id="getCustById" resultType="com.qhj.cart.domain.Cust">
         select *
-        from cart_cust
-        where id = #{id}
+        from "cart_cust"
+        where "id" = #{id}
     </select>
 </mapper>

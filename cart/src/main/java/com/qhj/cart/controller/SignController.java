@@ -30,4 +30,9 @@ public class SignController {
     public ChartResult getSignById(Long id) {
         return ChartResult.ok(signService.getSignById(id));
     }
+
+    @GetMapping("/getSignByCid")
+    public ChartResult getSignByCid(Long cid) {
+        return signService.getSignByCid(cid);
+    }
 }
